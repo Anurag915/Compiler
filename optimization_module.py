@@ -33,9 +33,8 @@
 #     opt = constant_folding(sample_ir)
 #     for line in opt:
 #         print(line)
-
-
 # optimization_module.py
+
 import re
 
 def constant_folding(ir_lines):

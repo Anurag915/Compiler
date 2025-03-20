@@ -434,16 +434,35 @@ def p_statement_expr(p):
     'statement : expression'
     p[0] = p[1]
 
+# def p_statement_assign(p):
+#     'statement : IDENTIFIER ASSIGN expression'
+#     variables[p[1]] = p[3]
+#     ir_code.append(f'{p[1]} = {p[3]}')
+#     p[0] = p[1]
+
 def p_statement_assign(p):
     'statement : IDENTIFIER ASSIGN expression'
-    variables[p[1]] = p[3]
+    variables[p[1]] = p[3]  # p[3] now holds an int (if possible)
     ir_code.append(f'{p[1]} = {p[3]}')
     p[0] = p[1]
+
+
+
 
 def p_statement_array_assign(p):
     'statement : IDENTIFIER LBRACKET expression RBRACKET ASSIGN expression'
     ir_code.append(f'{p[1]}[{p[3]}] = {p[6]}')
     p[0] = f'{p[1]}[{p[3]}]'
+
+# def p_statement_print(p):
+#     '''statement : PRINT LPAREN expression RPAREN
+#                  | PRINT LPAREN STRING RPAREN'''
+#     if isinstance(p[3], str):
+#         line = f'print "{p[3]}"'
+#     else:
+#         line = f'print {p[3]}'
+#     ir_code.append(line)
+#     p[0] = line
 
 def p_statement_print(p):
     '''statement : PRINT LPAREN expression RPAREN
@@ -451,9 +470,11 @@ def p_statement_print(p):
     if isinstance(p[3], str):
         line = f'print "{p[3]}"'
     else:
-        line = f'print {p[3]}'
+        line = f'print {p[3]}'  # p[3] is the computed value (e.g., 22)
     ir_code.append(line)
     p[0] = line
+
+
 
 def p_statement_if_else(p):
     'statement : IF LPAREN expression RPAREN statement ELSE statement'
@@ -507,18 +528,48 @@ def p_statement_while(p):
 # Expression rules
 # -------------------------
 
+# def p_expression_binop(p):
+#     '''expression : expression PLUS expression
+#                   | expression MINUS expression
+#                   | expression TIMES expression
+#                   | expression DIVIDE expression
+#                   | expression MOD expression'''
+#     temp_var = new_temp()
+#     if p[2] == '%':
+#         ir_code.append(f'{temp_var} = {p[1]} % {p[3]}')
+#     else:
+#         ir_code.append(f'{temp_var} = {p[1]} {p[2]} {p[3]}')
+#     p[0] = temp_var
+
+
 def p_expression_binop(p):
     '''expression : expression PLUS expression
                   | expression MINUS expression
                   | expression TIMES expression
                   | expression DIVIDE expression
                   | expression MOD expression'''
-    temp_var = new_temp()
-    if p[2] == '%':
-        ir_code.append(f'{temp_var} = {p[1]} % {p[3]}')
-    else:
+    # If both operands are integers, compute the result
+    if isinstance(p[1], int) and isinstance(p[3], int):
+        if p[2] == '+':
+            result = p[1] + p[3]
+        elif p[2] == '-':
+            result = p[1] - p[3]
+        elif p[2] == '*':
+            result = p[1] * p[3]
+        elif p[2] == '/':
+            result = p[1] // p[3]  # Integer division
+        elif p[2] == '%':
+            result = p[1] % p[3]
+        temp_var = new_temp()
         ir_code.append(f'{temp_var} = {p[1]} {p[2]} {p[3]}')
-    p[0] = temp_var
+        p[0] = result
+    else:
+        temp_var = new_temp()
+        ir_code.append(f'{temp_var} = {p[1]} {p[2]} {p[3]}')
+        p[0] = temp_var
+
+
+
 
 def p_expression_relational(p):
     'expression : expression LT expression'
@@ -532,9 +583,15 @@ def p_expression_array_access(p):
     ir_code.append(f'{temp_var} = {p[1]}[{p[3]}]')
     p[0] = temp_var
 
+# def p_expression_number(p):
+#     'expression : NUMBER'
+#     p[0] = str(p[1])
+
+
 def p_expression_number(p):
     'expression : NUMBER'
-    p[0] = str(p[1])
+    p[0] = p[1]  # Return the number as an integer
+
 
 def p_expression_identifier(p):
     'expression : IDENTIFIER'
