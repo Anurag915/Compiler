@@ -1,4 +1,6 @@
 # 🖥 Basic Compiler - A Simple Interpreter & Code Generator  
+
+![alt text](image.png)
 # Team Members:
 Mr.Anurag Prajapati-122cs0081
 Mr.Aman Chourasia-122cs0081
@@ -49,6 +51,7 @@ This project is a *basic compiler* that directly executes code using an *interpr
 git clone https://github.com/yourusername/BasicCompiler.git
 cd BasicCompiler
 python3 src/main.py test.py
+python3 compiler.py compiler.py
 
 
 📝 Sample Code & Output
@@ -82,7 +85,3 @@ This project is licensed under the MIT License.
 📧 Email: anuragprajapati02005@gmail.com
 📧 Email: gettoknowaman@gmail.com
 🔗 GitHub: https://github.com/Anurag915/Compiler
-
-markdown
-Copy
-Edit
