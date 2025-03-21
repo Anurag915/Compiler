@@ -1,6 +1,6 @@
 # 🖥 Basic Compiler - A Simple Interpreter & Code Generator  
 
-![alt text](image.png)
+                                ![alt text](image.png)
 # Team Members:
 Mr.Anurag Prajapati-122cs0081
 Mr.Aman Chourasia-122cs0081
