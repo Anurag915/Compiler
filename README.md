@@ -5,7 +5,7 @@
 </p>
 
 # Team Members:
-Mr. Anurag Prajapati - 122CS0081  
+Mr. Anurag Prajapati - 122CS0031  
 Mr. Aman Chourasia - 122CS0081  
 
 # COMPILER DESIGN @ IIITDM-KURNOOL
@@ -91,4 +91,5 @@ This project is licensed under the MIT License.
 📧 Email: anuragprajapati02005@gmail.com  
 📧 Email: gettoknowaman@gmail.com  
 🔗 [GitHub TEAM](https://github.com/Anurag915/Compiler)
+🔗 [GitHub TEAM](https://github.com/AMAN-22byte/Compiler)
 
