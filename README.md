@@ -35,12 +35,19 @@ This project is a *basic compiler* that directly executes code using an *interpr
 │ ├── ir_gen.py # IR generation  
 │ ├── codegen.py # Code generator  
 │ ├── interpreter.py # Execution engine  
-│ └── main.py # Entry point of the compiler  
+│ └── main.py # Entry point of the compiler 
+│ └── main.py # Entry point of the compiler 
+│ └── compiler.py # Entry point of the compiler  for taking input files
 ├── 📂 tests # Test cases  
 ├── 📜 README.md # Documentation  
 └── 📜 test.py # Sample input file  
+└── 📜 test2.py # Sample input file  
+└── 📜 test3.py # Sample input file  
+└── 📜 test4.py # Sample input file  
 
 ---
+
+
 
 ## 🛠 Installation & Usage  
 ### *🔹 Prerequisites*  
@@ -53,8 +60,8 @@ This project is a *basic compiler* that directly executes code using an *interpr
 
 git clone https://github.com/yourusername/BasicCompiler.git
 cd BasicCompiler
-python3 src/main.py test.py
-python3 compiler.py compiler.py
+python3 main.py 
+python3 compiler.py test.py
 ```
 
 📝 Sample Code & Output  
