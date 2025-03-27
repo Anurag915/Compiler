@@ -35,8 +35,8 @@ This project is a *basic compiler* that directly executes code using an *interpr
 │ ├── ir_gen.py # IR generation  
 │ ├── codegen.py # Code generator  
 │ ├── interpreter.py # Execution engine  
+│ |── compiler.py # Entry point of the compiler for taking input files
 │ └── main.py # Entry point of the compiler 
-│ └── compiler.py # Entry point of the compiler for taking input files
 ├── 📂 tests # Test cases  
 ├── 📜 README.md # Documentation  
 └── 📜 test.py # Sample input file  
