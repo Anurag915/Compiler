@@ -36,15 +36,13 @@ This project is a *basic compiler* that directly executes code using an *interpr
 │ ├── codegen.py # Code generator  
 │ ├── interpreter.py # Execution engine  
 │ └── main.py # Entry point of the compiler 
-│ └── main.py # Entry point of the compiler 
-│ └── compiler.py # Entry point of the compiler  for taking input files
+│ └── compiler.py # Entry point of the compiler for taking input files
 ├── 📂 tests # Test cases  
 ├── 📜 README.md # Documentation  
 └── 📜 test.py # Sample input file  
 └── 📜 test2.py # Sample input file  
 └── 📜 test3.py # Sample input file  
 └── 📜 test4.py # Sample input file  
-
 ---
 
 
